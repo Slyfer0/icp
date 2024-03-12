@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime World - Home</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        max-width: 100px;
+        max-height: 100px;
+        margin-left: 20px;
+    }
+    h1 {
+        margin: 40px auto;
+        text-align: center; /* Center the title */
+    }
+    nav {
+        display: flex;
+        /* margin-left: auto; Remove this line */
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 0 10px;
+        position: relative;
+    }
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: transparent;
+        bottom: -3px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+        background-color: #fff;
+    }
+    nav a.active::after {
+        background-color: #fff;
+    }
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+    .featured-anime {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+    }
+    .anime-card {
+        width: 300px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.3s ease;
+    }
+    .anime-card:hover {
+        transform: translateY(-5px);
+    }
+    .anime-image {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .anime-details {
+        padding: 20px;
+    }
+    .anime-title {
+        font-size: 20px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 10px;
+    }
+    .anime-description {
+        font-size: 16px;
+        color: #666;
+    }
+    .cta-button {
+        display: block;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 5px;
+        margin-top: 10px;
+        transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+        background-color: #555;
+    }
+</style>
+</head>
+<body>
+
+<header>
+    <img src="Logo\Logo white.png" alt="Anime World Logo" class="logo">
+    <nav>
+        <a href="Home.html" id="home" class="active">Home</a>
+        <a href="Table.html" id="table">Table</a>
+        <a href="About.html" id="about">About</a>
+    </nav>
+</header>
+
+<h1>Welcome to Anime World!</h1>
+
+<div class="container">
+    <h2>Featured Anime</h2>
+    <div class="featured-anime">
+        <!-- Anime 1 -->
+        <div class="anime-card">
+            <img src="Pictures/solo.jpg" alt="Solo Leveling" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Solo Leveling</h3>
+                <p class="anime-description">Adventure</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 2 -->
+        <div class="anime-card">
+            <img src="Pictures/class.jpg" alt="Classroom of Elites" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Classroom of Elites</h3>
+                <p class="anime-description">Mystery</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 3 -->
+        <div class="anime-card">
+            <img src="Pictures/shadow.jpg" alt="The Eminence in Shadow" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">The Eminence in Shadow</h3>
+                <p class="anime-description">Fantasy</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 4 -->
+        <div class="anime-card">
+            <img src="Pictures/seven.jpg" alt="Seven Deadly Sins" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Seven Deadly Sins</h3>
+                <p class="anime-description">Adventure</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 5 -->
+        <div class="anime-card">
+            <img src="Pictures/code.jpg" alt="Code Geass" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Code Geass</h3>
+                <p class="anime-description">Mecha</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 6 -->
+        <div class="anime-card">
+            <img src="Pictures/hunter.jpg" alt="Hunter x Hunter" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Hunter x Hunter</h3>
+                <p class="anime-description">Adventure</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 7 -->
+        <div class="anime-card">
+            <img src="Pictures/initial.jpg" alt="Initial D" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Initial D</h3>
+                <p class="anime-description">Racing</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 8 -->
+        <div class="anime-card">
+            <img src="Pictures/akame.jpg" alt="Akame ga Kill" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Akame ga Kill</h3>
+                <p class="anime-description">Action/Fantasy</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 9 -->
+        <div class="anime-card">
+            <img src="Pictures/katekyo.jpg" alt="Katekyo Hitman Reborn" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">Katekyo Hitman Reborn</h3>
+                <p class="anime-description">Action/Comedy</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+        <!-- Anime 10 -->
+        <div class="anime-card">
+            <img src="Pictures/god.jpg" alt="The God of Highschool" class="anime-image">
+            <div class="anime-details">
+                <h3 class="anime-title">The God of Highschool</h3>
+                <p class="anime-description">Action/Fantasy</p>
+                <a href="#" class="cta-button">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

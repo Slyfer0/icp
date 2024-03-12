@@ -1,0 +1,91 @@
+<List>
+        <Anime>
+                <Title> Solo Leveling </Title>
+                <Genre> Adventure </Genre>
+                <Rating> 9.23 </Rating>
+                <Type> Series </Type>
+                <Studio> A-1 Picture </Studio>
+                <Image> Pictures/solo.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Classroom of Elites </Title>
+                <Genre> Mystery </Genre>
+                <Rating> 8.12 </Rating>
+                <Type> Series </Type>
+                <Studio> A-1 Picture </Studio>
+                <Image> Pictures/class.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> The eminence in shadow </Title>
+                <Genre> Fantasy </Genre>
+                <Rating> 9.12 </Rating>
+                <Type> Series </Type>
+                <Studio> Nexus </Studio>
+                <Image> Pictures/shadow.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Seven Deadly Sins </Title>
+                <Genre> Adventure </Genre>
+                <Rating> 7.53 </Rating>
+                <Type> Series/Movie </Type>
+                <Studio> Studio Deen </Studio>
+                <Image> Pictures/seven.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Code Geass </Title>
+                <Genre> Mecha </Genre>
+                <Rating> 9.65 </Rating>
+                <Type> Series/Movie </Type>
+                <Studio> A-1 Picture </Studio>
+                <Image> Pictures/code.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Hunter x Hunter </Title>
+                <Genre> Adventure </Genre>
+                <Rating> 8.42 </Rating>
+                <Type> Series/Movie </Type>
+                <Studio> Mappa </Studio>
+                <Image> Pictures/hunter.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Initial D </Title>
+                <Genre> Racing </Genre>
+                <Rating> 7.59 </Rating>
+                <Type> Series/Movie </Type>
+                <Studio> Felix Film </Studio>
+                <Image> Pictures/initial.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Akamega Kill </Title>
+                <Genre> Action/Fantasy </Genre>
+                <Rating> 7.47 </Rating>
+                <Type> Series </Type>
+                <Studio> White Fox </Studio>
+                <Image> Pictures/akame.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> Katekyo Hitman Reborn </Title>
+                <Genre> Action/Comedy </Genre>
+                <Rating> 8.13 </Rating>
+                <Type> Series </Type>
+                <Studio> Artland </Studio>
+                <Image> Pictures/katekyo.jpg </Image>
+        </Anime>
+
+        <Anime>
+                <Title> The God of Highschool </Title>
+                <Genre> Action/Fantasy </Genre>
+                <Rating> 7.07 </Rating>
+                <Type> Series </Type>
+                <Studio> Mappa </Studio>
+                <Image> Pictures/god.jpg </Image>
+        </Anime>
+</List>

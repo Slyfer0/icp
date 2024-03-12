@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anime List</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+    }
+    header {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .logo {
+        max-width: 100px;
+        max-height: 100px;
+        margin-left: 20px;
+    }
+    h1 {
+        margin: 0;
+        text-align: center; /* Center the title */
+    }
+    nav {
+        display: flex;
+        /* margin-left: auto; Remove this line */
+    }
+    nav a {
+        text-decoration: none;
+        color: #fff;
+        padding: 10px 20px;
+        margin: 0 10px;
+        position: relative;
+    }
+    nav a::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 3px;
+        background-color: transparent;
+        bottom: -3px;
+        left: 0;
+        transition: all 0.3s ease-in-out;
+    }
+    nav a:hover::after {
+        background-color: #fff;
+    }
+    nav a.active::after {
+        background-color: #fff;
+    }
+
+/* Table styling */
+.container {
+    max-width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Add border-radius for rounded corners */
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    border: 1px solid #ddd; /* Change border color */
+    padding: 12px; /* Increase padding for better spacing */
+    text-align: center; /* Center the contents */
+    transition: background-color 0.3s; /* Add transition for smooth color change */
+}
+
+th {
+    background-color: #e0e0e0; /* Slightly darker background color */
+}
+
+/* Add hover effect to table rows */
+tr:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+/* Add hover effect to table cells */
+th:hover,
+td:hover {
+    background-color: #e9e9e9; /* Lighter background color on hover */
+}
+
+/* Alternate row colors */
+tr:nth-child(even) {
+    background-color: #f9f9f9; /* Lighter background color for even rows */
+}
+
+.anime-image {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+
+
+/* Search field and button styling */
+#searchInput {
+    padding: 10px; /* Add padding for better spacing */
+    margin-right: 10px; /* Add margin to separate from the button */
+    border: 1px solid #ccc; /* Add border */
+    border-radius: 5px; /* Add border radius for rounded corners */
+    font-size: 16px;
+}
+
+#searchInput:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #666; /* Change border color on focus */
+}
+
+#searchButton {
+    padding: 10px 20px; /* Add padding */
+    background-color: #333; /* Button background color */
+    color: #fff; /* Button text color */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Add border radius */
+    cursor: pointer; /* Add cursor pointer */
+    font-size: 16px;
+}
+
+#searchButton:hover {
+    background-color: #555; /* Darken background color on hover */
+}
+
+
+</style>
+</head>
+<body>
+
+<header>
+    <img src="Logo\Logo white.png" alt="Anime World Logo" class="logo">
+    <nav>
+        <a href="Home.html" id="home">Home</a>
+        <a href="Table.html" id="table" class="active">Table</a>
+        <a href="About.html" id="about">About</a>
+    </nav>
+</header>
+
+<div class="container">
+    <h2>Anime List</h2>
+
+    <!-- Search input and button -->
+    <input type="text" id="searchInput" placeholder="Search by title">
+    <button id="searchButton" onclick="searchByTitle()">Search</button>
+
+    <table id="animeTable">
+        <tr>
+            <th>Title</th>
+            <th>Genre</th>
+            <th>Rating</th>
+            <th>Type</th>
+            <th>Studio</th>
+            <th>Image</th>
+        </tr>
+    </table>
+</div>
+
+<script>
+// Function to filter table rows by title
+function searchByTitle() {
+    // Get input value
+    const input = document.getElementById('searchInput').value.toLowerCase();
+    // Get table rows
+    const rows = document.getElementById('animeTable').getElementsByTagName('tr');
+    // Loop through rows, start from index 1 to skip the header row
+    for (let i = 1; i < rows.length; i++) {
+        // Get title cell content
+        const title = rows[i].getElementsByTagName('td')[0].textContent.toLowerCase();
+        // If title contains input value, display the row, otherwise hide it
+        if (title.includes(input)) {
+            rows[i].style.display = '';
+        } else {
+            rows[i].style.display = 'none';
+        }
+    }
+}
+
+// Fetch the XML file
+fetch('Act1.xml')
+.then(response => response.text())
+.then(xmlString => {
+    // Parse the XML
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlString, 'text/xml');
+    const animeList = xmlDoc.getElementsByTagName('Anime');
+
+    // Create and populate table rows
+    const table = document.getElementById('animeTable');
+    for (let i = 0; i < animeList.length; i++) {
+        const anime = animeList[i];
+        const titleNode = anime.getElementsByTagName('Title')[0];
+        const genreNode = anime.getElementsByTagName('Genre')[0];
+        const ratingNode = anime.getElementsByTagName('Rating')[0];
+        const typeNode = anime.getElementsByTagName('Type')[0];
+        const studioNode = anime.getElementsByTagName('Studio')[0];
+        const imageNode = anime.getElementsByTagName('Image')[0];
+
+        // Check if nodes exist before accessing their textContent
+        const title = titleNode ? titleNode.textContent : '';
+        const genre = genreNode ? genreNode.textContent : '';
+        const rating = ratingNode ? ratingNode.textContent : '';
+        const type = typeNode ? typeNode.textContent : '';
+        const studio = studioNode ? studioNode.textContent : '';
+        const image = imageNode ? imageNode.textContent : '';
+
+        const row = table.insertRow(-1);
+        const cells = [title, genre, rating, type, studio, `<img src="${image}" alt="${title}" class="anime-image">`];
+        cells.forEach((cellData, index) => {
+            const cell = row.insertCell(index);
+            cell.innerHTML = cellData;
+        });
+    }
+})
+.catch(error => console.error('Error fetching XML:', error));
+</script>
+
+</body>
+</html>
